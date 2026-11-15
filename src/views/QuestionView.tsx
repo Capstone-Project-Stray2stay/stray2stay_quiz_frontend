@@ -45,6 +45,7 @@ export default function QuestionView({
                 key={option}
                 type="button"
                 w="full"
+                bgColor={guess === option ? "LightBlue" : "Blue"}
                 variant={guess === option ? "solid" : "outline"}
                 disabled={submitting}
                 onClick={() => onGuessChange(option)}
@@ -60,7 +61,7 @@ export default function QuestionView({
             </Text>
           )}
 
-          <QuizButton type="submit" size="lg" bgColor="Yellow" loading={submitting} disabled={!guess}>
+          <QuizButton type="submit" size="lg" bgColor="Orange" loading={submitting} disabled={!guess}>
             Submit Guess
           </QuizButton>
         </form>

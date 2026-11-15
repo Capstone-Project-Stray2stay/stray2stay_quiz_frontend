@@ -8,7 +8,7 @@ const SIZES: Record<QuizButtonSize, { minW: string; px: string; py: string; font
   md: { minW: "160px", px: "16px", py: "10px", fontSize: "18" },
 };
 
-const DARK_TEXT_FILLS = ["Cream", "White", "Yellow"];
+const DARK_TEXT_FILLS = ["Cream", "White", "LightBlue"];
 
 export default function QuizButton({
   children,
