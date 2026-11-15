@@ -1,5 +1,4 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
-import { FaCat, FaDog } from "react-icons/fa6";
+import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 import SpeciesButton from "../components/SpeciesButton.component";
 import type { PetType } from "../types/quiz.types";
@@ -16,9 +15,18 @@ export default function SpeciesSelectView({ onSelect }: { onSelect: (petType: Pe
         </Text>
       </Flex>
 
+      {/* Same Cream circle + brand icon pattern as S2SPetIconButton on the main site's adopt page */}
       <Flex gap={{ base: 8, md: 16 }}>
-        <SpeciesButton icon={<FaCat />} label="Cat" onClick={() => onSelect("cat")} />
-        <SpeciesButton icon={<FaDog />} label="Dog" onClick={() => onSelect("dog")} />
+        <SpeciesButton
+          icon={<Image src="/assets/icons/cat.png" alt="Cat" boxSize={{ base: "44px", md: "64px" }} objectFit="contain" />}
+          label="Cat"
+          onClick={() => onSelect("cat")}
+        />
+        <SpeciesButton
+          icon={<Image src="/assets/icons/dog.png" alt="Dog" boxSize={{ base: "44px", md: "64px" }} objectFit="contain" />}
+          label="Dog"
+          onClick={() => onSelect("dog")}
+        />
       </Flex>
     </Flex>
   );

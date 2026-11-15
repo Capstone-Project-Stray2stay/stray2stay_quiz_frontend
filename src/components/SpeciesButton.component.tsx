@@ -17,8 +17,6 @@ export default function SpeciesButton({
         bg="Cream"
         boxShadow="0px 4px 20px rgba(201,220,225,0.35)"
         transition="background 0.15s ease, transform 0.15s ease"
-        fontSize={{ base: "40px", md: "56px" }}
-        color="Grey"
         _groupHover={{ bg: "Cream_hover", transform: "scale(1.04)" }}
         _groupActive={{ bg: "Cream_active" }}
       >
