@@ -55,7 +55,7 @@ export default function QuestionView({
                   <Flex direction="column" align="center" gap={0}>
                     <Text as="span">{option}</Text>
                     {thaiName && (
-                      <Text as="span" fontSize="13" fontWeight="400" opacity={0.75}>
+                      <Text as="span" fontSize="16" fontWeight="400" opacity={0.85}>
                         {thaiName}
                       </Text>
                     )}

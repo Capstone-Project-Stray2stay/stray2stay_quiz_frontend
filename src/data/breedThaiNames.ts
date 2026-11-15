@@ -10,7 +10,7 @@ const BREED_THAI_NAMES: Record<string, string> = {
   "Domestic Short Hair": "โดเมสติก ชอร์ตแฮร์",
   "Exotic Shorthair": "เอ็กโซติก ชอร์ตแฮร์",
   "Khao Manee": "ขาวมณี",
-  Konja: "คอนจา",
+  Konja: "โกญจา",
   Korat: "โคราช",
   "Maine Coon": "เมนคูน",
   "Norwegian Forest": "นอร์วีเจียน ฟอเรสต์",
@@ -20,7 +20,7 @@ const BREED_THAI_NAMES: Record<string, string> = {
   "Scottish Fold": "สก็อตติช โฟลด์",
   Siamese: "วิเชียรมาศ",
   Sphynx: "สฟิงซ์",
-  Suphalak: "สุพลักษณ์",
+  Suphalak: "ศุภลักษณ์",
 
   // Dogs
   Airedale: "แอร์เดล",
@@ -50,7 +50,7 @@ const BREED_THAI_NAMES: Record<string, string> = {
   "German Shepherd": "เยอรมัน เชพเพิร์ด",
   "Golden Retriever": "โกลเด้น รีทรีฟเวอร์",
   Greyhound: "เกรย์ฮาวด์",
-  "Japanese Spaniel": "เจแปนนิส สแปเนียล",
+  "Japanese Spaniel": "เจแปนนิส ชิน",
   Labradoodle: "ลาบราดูเดิล",
   Labrador: "ลาบราดอร์",
   Lhasa: "ลาซา แอปโซ",
@@ -61,13 +61,13 @@ const BREED_THAI_NAMES: Record<string, string> = {
   Poodle: "พุดเดิ้ล",
   Pug: "ปั๊ก",
   Rhodesian: "โรดีเซียน ริดจ์แบ็ก",
-  Rottweiler: "รอตไวเลอร์",
+  Rottweiler: "ร็อตไวเลอร์",
   Schnauzer: "ชเนาเซอร์",
-  "Scotch Terrier": "สกอตช์ เทอร์เรีย",
+  "Scotch Terrier": "สก็อตติช เทอร์เรีย",
   "Shiba Inu": "ชิบะ อินุ",
-  "Shih Tzu": "ชิห์สุ",
+  "Shih Tzu": "ชิสุ",
   "Siberian Husky": "ไซบีเรียน ฮัสกี้",
-  Yorkie: "ยอร์คกี้",
+  Yorkie: "ยอร์กกี้",
 };
 
 export function getBreedThaiName(breedName: string): string | undefined {

@@ -65,7 +65,7 @@ export default function App() {
     <Flex minH="100vh" w="full" direction="column" align="center" bgGradient="PageBackground">
       <Flex direction="column" align="center" gap={1} pt={10}>
         {/* Same wordmark asset the main site uses in S2SNavbar, so the quiz reads as part of the same product */}
-        <Image src="/favicon.png" alt="Stray2Stay" w={{ base: "140px", md: "180px" }} objectFit="contain" />
+        <Image src="/favicon.png" alt="Stray2Stay" w={{ base: "200px", md: "260px" }} objectFit="contain" />
         <Text fontSize="14" color="GreyInfo" letterSpacing="1px" textTransform="uppercase">
           Breed Guessing Quiz
         </Text>
