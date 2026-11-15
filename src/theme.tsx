@@ -61,6 +61,7 @@ const config = defineConfig({
       fonts: {
         heading: { value: "'Montserrat', sans-serif" },
         body: { value: "'Montserrat', sans-serif" },
+        thai: { value: "'Noto Sans Thai', sans-serif" },
       },
       fontSizes: {
         "10": px(10),

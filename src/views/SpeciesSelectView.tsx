@@ -7,10 +7,10 @@ export default function SpeciesSelectView({ onSelect }: { onSelect: (petType: Pe
   return (
     <Flex direction="column" align="center" gap={{ base: 8, md: 10 }} textAlign="center">
       <Flex direction="column" align="center" gap={2}>
-        <Heading fontSize={{ base: "28", md: "36" }} color="TitleBlue" fontWeight="700">
+        <Heading fontSize={{ base: "36", md: "48" }} color="TitleBlue" fontWeight="700">
           Guess the Breed
         </Heading>
-        <Text fontSize={{ base: "15", md: "18" }} color="GreyText" maxW="360px">
+        <Text fontSize={{ base: "18", md: "22" }} color="GreyText" maxW="420px">
           Pick a cat or a dog, look at the photo, and type your best guess at the breed.
         </Text>
       </Flex>
