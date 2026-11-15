@@ -4,6 +4,7 @@ export interface QuizQuestionResponse {
   token: string;
   petType: PetType;
   imageUrl: string;
+  options: string[];
   message: string;
 }
 

@@ -1,4 +1,4 @@
-import { Flex, Heading, Input, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 
 import QuizCard, { QuizImage } from "../components/QuizCard.component";
 import QuizButton from "../components/QuizButton.component";
@@ -7,6 +7,7 @@ import type { PetType } from "../types/quiz.types";
 export default function QuestionView({
   petType,
   imageUrl,
+  options,
   guess,
   onGuessChange,
   onSubmit,
@@ -15,6 +16,7 @@ export default function QuestionView({
 }: {
   petType: PetType;
   imageUrl: string;
+  options: string[];
   guess: string;
   onGuessChange: (value: string) => void;
   onSubmit: () => void;
@@ -34,20 +36,23 @@ export default function QuestionView({
           style={{ width: "100%", display: "flex", flexDirection: "column", gap: "16px", alignItems: "center" }}
           onSubmit={(e) => {
             e.preventDefault();
-            if (!submitting && guess.trim()) onSubmit();
+            if (!submitting && guess) onSubmit();
           }}
         >
-          <Input
-            value={guess}
-            onChange={(e) => onGuessChange(e.target.value)}
-            placeholder="Type the breed name..."
-            size="lg"
-            rounded="full"
-            bg="White"
-            borderColor="BabyGray"
-            textAlign="center"
-            autoFocus
-          />
+          <Flex direction="column" gap={3} w="full">
+            {options.map((option) => (
+              <QuizButton
+                key={option}
+                type="button"
+                w="full"
+                variant={guess === option ? "solid" : "outline"}
+                disabled={submitting}
+                onClick={() => onGuessChange(option)}
+              >
+                {option}
+              </QuizButton>
+            ))}
+          </Flex>
 
           {errorMessage && (
             <Text color="Red" fontSize="14">
@@ -55,7 +60,7 @@ export default function QuestionView({
             </Text>
           )}
 
-          <QuizButton type="submit" size="lg" loading={submitting} disabled={!guess.trim()}>
+          <QuizButton type="submit" size="lg" loading={submitting} disabled={!guess}>
             Submit Guess
           </QuizButton>
         </form>

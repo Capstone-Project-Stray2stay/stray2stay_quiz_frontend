@@ -10,7 +10,7 @@ import type { PetType } from "./types/quiz.types";
 
 type Stage =
   | { name: "select" }
-  | { name: "question"; petType: PetType; token: string; imageUrl: string }
+  | { name: "question"; petType: PetType; token: string; imageUrl: string; options: string[] }
   | { name: "result"; petType: PetType; imageUrl: string; guess: string; correct: boolean; correctBreed: string };
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
     try {
       const question = await getQuizQuestionAPI(petType);
       setGuess("");
-      setStage({ name: "question", petType, token: question.token, imageUrl: question.imageUrl });
+      setStage({ name: "question", petType, token: question.token, imageUrl: question.imageUrl, options: question.options });
     } catch {
       setErrorMessage("Couldn't load a question right now. Please try again.");
     } finally {
@@ -92,6 +92,7 @@ export default function App() {
           <QuestionView
             petType={stage.petType}
             imageUrl={stage.imageUrl}
+            options={stage.options}
             guess={guess}
             onGuessChange={setGuess}
             onSubmit={handleSubmitGuess}

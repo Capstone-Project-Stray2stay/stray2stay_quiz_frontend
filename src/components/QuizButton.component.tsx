@@ -15,6 +15,7 @@ export default function QuizButton({
   bgColor = "Blue",
   variant = "solid",
   size = "md",
+  w,
   loading,
   disabled,
   onClick,
@@ -24,6 +25,7 @@ export default function QuizButton({
   bgColor?: string;
   variant?: "solid" | "outline";
   size?: QuizButtonSize;
+  w?: string;
   loading?: boolean;
   disabled?: boolean;
   onClick?: () => void;
@@ -45,9 +47,12 @@ export default function QuizButton({
       _hover={isOutline ? { bg: "LineHover" } : { bg: `${bgColor}_hover` }}
       _active={isOutline ? { bg: "LineActive" } : { bg: `${bgColor}_active` }}
       minW={sizing.minW}
+      w={w}
       px={sizing.px}
       py={sizing.py}
       fontSize={sizing.fontSize}
+      whiteSpace="normal"
+      h="auto"
       loading={loading}
       disabled={disabled}
       onClick={onClick}
