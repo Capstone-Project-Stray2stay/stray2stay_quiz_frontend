@@ -38,6 +38,8 @@ const config = defineConfig({
         White_active: { value: "rgba(241, 241, 241, 0.80)" },
         Blue_hover: { value: "#77C8ED" },
         Blue_active: { value: "#6BC3EC" },
+        Yellow_hover: { value: "#F2BB5E" },
+        Yellow_active: { value: "#ECB250" },
         Orange_hover: { value: "#FBBE6A" },
         Orange_active: { value: "#F9B95F" },
         Cream_hover: { value: "#FBE7B4" },

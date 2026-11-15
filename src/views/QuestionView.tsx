@@ -60,7 +60,7 @@ export default function QuestionView({
             </Text>
           )}
 
-          <QuizButton type="submit" size="lg" loading={submitting} disabled={!guess}>
+          <QuizButton type="submit" size="lg" bgColor="Yellow" loading={submitting} disabled={!guess}>
             Submit Guess
           </QuizButton>
         </form>
