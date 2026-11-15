@@ -1,0 +1,121 @@
+import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
+
+// Token palette/fonts mirror the main Stray2Stay site (stray2stay_frontend/src/theme.tsx)
+// so this standalone quiz feels like part of the same product.
+const px = (size: number) => ({ value: `var(--font-size-${size}, ${size - 1}px)` });
+
+const config = defineConfig({
+  theme: {
+    tokens: {
+      colors: {
+        Blue: { value: "#87CFF0" },
+        BlueText: { value: "#85BFE2" },
+        LightBlue: { value: "#d3eefb" },
+        Grey: { value: "#595959" },
+        LightGrey: { value: "#888888" },
+        Green: { value: "#84B895" },
+        LightGreen: { value: "#D6F5D8" },
+        Red: { value: "#D97D7D" },
+        LightRed: { value: "#FBE1E1" },
+        Yellow: { value: "#F8C56D" },
+        LightYellow: { value: "#FFF6D4" },
+        White: { value: "#FFFFFF" },
+        Cream: { value: "#FFEEC1" },
+        PetIconActive: { value: "#FCE4A7" },
+        YellowBorder: { value: "#FFD387" },
+        SkyBlue: { value: "#C6E7F7" },
+        GreyText: { value: "#7E7E7E" },
+        GreyMuted: { value: "#B0B0B0" },
+        BabyGray: { value: "#D5D5D5" },
+        GreenBorder: { value: "#BDE1B9" },
+        TitleBlue: { value: "#78B8E0" },
+        Orange: { value: "#FFC777" },
+        GreyInfo: { value: "#969696" },
+        GlowYellow: { value: "rgba(255, 235, 186, 0.67)" },
+        PaleYellow: { value: "#FFF6DE" },
+        AcceptGreen: { value: "#5DB993" },
+        White_hover: { value: "rgba(247, 247, 247, 0.80)" },
+        White_active: { value: "rgba(241, 241, 241, 0.80)" },
+        Blue_hover: { value: "#77C8ED" },
+        Blue_active: { value: "#6BC3EC" },
+        Orange_hover: { value: "#FBBE6A" },
+        Orange_active: { value: "#F9B95F" },
+        Cream_hover: { value: "#FBE7B4" },
+        Cream_active: { value: "#FFD381" },
+        Green_hover: { value: "#73AB84" },
+        Green_active: { value: "#67A078" },
+        Red_hover: { value: "#D16868" },
+        Red_active: { value: "#C85858" },
+        LineHover: { value: "rgba(198, 231, 247, 0.30)" },
+        LineActive: { value: "rgba(198, 231, 247, 0.50)" },
+        SkyBlueHover: { value: "rgba(198, 231, 247, 0.30)" },
+      },
+      gradients: {
+        PageBackground: {
+          value: "linear-gradient(180deg, #E6FAFF 0%, #FFFBF1 100%)",
+        },
+        BlueYellow: {
+          value: "linear-gradient(180deg, #d3eefb 0%, #FFFBF1 100%)",
+        },
+      },
+      fonts: {
+        heading: { value: "'Montserrat', sans-serif" },
+        body: { value: "'Montserrat', sans-serif" },
+      },
+      fontSizes: {
+        "10": px(10),
+        "12": px(12),
+        "13": px(13),
+        "14": px(14),
+        "15": px(15),
+        "16": px(16),
+        "17": px(17),
+        "18": px(18),
+        "20": px(20),
+        "22": px(22),
+        "24": px(24),
+        "32": px(32),
+        "36": px(36),
+        "40": px(40),
+        "48": px(48),
+        "56": px(56),
+        "60": px(60),
+        "64": px(64),
+        "2xs": px(10),
+        xs: px(12),
+        sm: px(14),
+        md: px(16),
+        lg: px(18),
+        xl: px(20),
+        "2xl": px(24),
+        "3xl": px(30),
+        "4xl": px(36),
+        "5xl": px(48),
+        "6xl": px(60),
+        "7xl": px(72),
+        "8xl": px(96),
+        "9xl": px(128),
+      },
+    },
+  },
+  globalCss: {
+    "html, body": {
+      fontFamily: "'Montserrat', sans-serif",
+      fontSize: "15px",
+      overflowX: "hidden",
+    },
+    "*": {
+      WebkitTapHighlightColor: "transparent",
+    },
+    "*::-webkit-scrollbar": { width: "6px", height: "6px" },
+    "*::-webkit-scrollbar-button": { display: "none" },
+    "*::-webkit-scrollbar-track": { background: "transparent" },
+    "*::-webkit-scrollbar-corner": { background: "transparent" },
+    "*::-webkit-scrollbar-thumb": { bg: "SkyBlue", borderRadius: "999px" },
+    "*::-webkit-scrollbar-thumb:hover": { bg: "Blue" },
+  },
+});
+
+const system = createSystem(defaultConfig, config);
+
+export default system;
