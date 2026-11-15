@@ -2,6 +2,7 @@ import { Flex, Heading, Text } from "@chakra-ui/react";
 
 import QuizCard, { QuizImage } from "../components/QuizCard.component";
 import QuizButton from "../components/QuizButton.component";
+import { getBreedThaiName } from "../data/breedThaiNames";
 import type { PetType } from "../types/quiz.types";
 
 export default function QuestionView({
@@ -40,18 +41,28 @@ export default function QuestionView({
           }}
         >
           <Flex direction="column" gap={3} w="full">
-            {options.map((option) => (
-              <QuizButton
-                key={option}
-                type="button"
-                w="full"
-                variant={guess === option ? "solid" : "outline"}
-                disabled={submitting}
-                onClick={() => onGuessChange(option)}
-              >
-                {option}
-              </QuizButton>
-            ))}
+            {options.map((option) => {
+              const thaiName = getBreedThaiName(option);
+              return (
+                <QuizButton
+                  key={option}
+                  type="button"
+                  w="full"
+                  variant={guess === option ? "solid" : "outline"}
+                  disabled={submitting}
+                  onClick={() => onGuessChange(option)}
+                >
+                  <Flex direction="column" align="center" gap={0}>
+                    <Text as="span">{option}</Text>
+                    {thaiName && (
+                      <Text as="span" fontSize="13" fontWeight="400" opacity={0.75}>
+                        {thaiName}
+                      </Text>
+                    )}
+                  </Flex>
+                </QuizButton>
+              );
+            })}
           </Flex>
 
           {errorMessage && (
