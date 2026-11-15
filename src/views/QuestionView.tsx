@@ -45,7 +45,6 @@ export default function QuestionView({
                 key={option}
                 type="button"
                 w="full"
-                bgColor={guess === option ? "LightBlue" : "Blue"}
                 variant={guess === option ? "solid" : "outline"}
                 disabled={submitting}
                 onClick={() => onGuessChange(option)}
