@@ -8,10 +8,12 @@ RUN bun install --frozen-lockfile
 
 COPY . .
 
-# Vite auto-loads .env from this directory at build time and bakes
-# VITE_* values into the JS bundle - make sure .env has the values you
-# want live before building this image (it's not a secret; it ends up
-# readable in the shipped bundle either way).
+# .env is dockerignored, so pass the API URL in as a build arg instead.
+# Vite bakes VITE_* values into the JS bundle at build time - it's not a
+# secret, it ends up readable in the shipped bundle either way.
+ARG VITE_API_URL=http://localhost:8081/api
+ENV VITE_API_URL=$VITE_API_URL
+
 RUN bun run build
 
 # ---- runtime stage ----
